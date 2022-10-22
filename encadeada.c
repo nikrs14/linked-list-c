@@ -101,6 +101,7 @@ void removeElement(List *l, int x) {
                 m = m->next;
             }
             n->next = m->next;
+            free(m);
         }
     } else {
         printf("Element is not on the list.\n");
