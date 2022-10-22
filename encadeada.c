@@ -62,15 +62,12 @@ int getPosition(List *l, int x) {
     /* Returns the position of x on the list l (-1 if the list doesn't have a element of value x) */
     int i = 0, s = getLength(l);
     Node *n = l->first;
-    if (s != 0) {
-        if (isInside(l, x)) {
-            while ((n->key != x) && (i < getLength(l))) {
-                n = n->next;
-                i++;
-            }
-            return i;
+    if (isInside(l, x)) {
+        while ((n->key != x) && (i < getLength(l))) {
+            n = n->next;
+            i++;
         }
-        return -1;
+        return i;
     }
     return -1;
 }
